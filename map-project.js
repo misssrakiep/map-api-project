@@ -27,7 +27,7 @@ success: function(results){
 
 console.log(searchResult);
 
-var searchBtn = document.querySelector(".searchBtn");
+var searchBtn = document.querySelector("#searchButton");
 
 searchBtn.addEventListener("click", function searchPlace (){
     for (var i=0; i<searchResult[0].length; i++){
