@@ -1,4 +1,3 @@
-var searchBox = document.querySelector(".searchBox").value;
 
 var searchResult = [];
 
@@ -28,13 +27,15 @@ success: function(results){
 console.log(searchResult);
 
 var searchBtn = document.querySelector("#searchButton");
+var searchBox = document.querySelector(".searchBox");
 
 searchBtn.addEventListener("click", function searchPlace (){
-    for (var i=0; i<searchResult[0].length; i++){
-        if (searchBox === searchResult[i]){
-            console.log(searchResult[i])
-        }
-    }
+  for(var i=0; i<searchResult.length; i++){
+      if(searchBox.value === searchResult[i].City){
+          console.log(searchResult[i]);
+      }
+  }
+      
 })
 
 
