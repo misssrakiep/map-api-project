@@ -14,7 +14,7 @@ dataType: "json",
 success: function(results){
     console.log(results)
     for (var i=0; i<results.length; i++){
-        searchResult.push(results[i].City.trim());  
+        searchResult.push(results[i].City.trim(), results[i].Latitude, results[i].Longitude);  
           
     }
     
@@ -27,7 +27,7 @@ var searchBtn = document.querySelector(".searchBtn");
 
 searchBtn.addEventListener("click", function searchPlace (){
     for (var i=0; i<searchResult[0].length; i++){
-        if (searchBox === searchResult[i]){
+        if (searchBox === searchResult[i].trim()){
             console.log(searchResult[i])
         }
     }
