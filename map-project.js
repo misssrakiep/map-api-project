@@ -26,26 +26,47 @@ success: function(results){
 
 console.log(searchResult);
 
+function myMap() {
 var searchBtn = document.querySelector("#searchButton");
 var searchBox = document.querySelector(".searchBox");
 
+var searchLoc;
+var searchLat;
+var searchLon;
+var marker;
+
 searchBtn.addEventListener("click", function searchPlace (){
-  for(var i=0; i<searchResult.length; i++){
-      if(searchBox.value === searchResult[i].City){
-          console.log(searchResult[i]);
-      }
-  }
-      
+    for(var i=0; i<searchResult.length; i++){
+        if(searchBox.value === searchResult[i].City){
+            //   console.log(searchLat + searchLon);
+            searchLat = searchResult[i].Latitude;
+            searchLon = searchResult[i].Longitude;
+            searchLoc = new google.maps.LatLng(searchLat, searchLon);
+            marker = new google.maps.Marker({
+                position : searchLoc,
+                map : map 
+            })
+            marker.setPosition(searchLoc);
+        }
+    }
+    
+    console.log(searchLoc)
+    
+    // function changeMarkerPosition(marker){
+    //     var latlng = searchLoc;
+    //     marker.setPosition(latlng);
+    // }
+    map.setCenter(searchLoc)
+    
 })
-
-
-function myMap() {
     var mapProp= {
-        center:new google.maps.LatLng(51.508742,-0.120850),
-        zoom:5,
+        center: new google.maps.LatLng(39.50, -98.35),
+        zoom:5
     };
     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    
     }
     myMap();
         });
 
+        
