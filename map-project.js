@@ -14,7 +14,12 @@ dataType: "json",
 success: function(results){
     console.log(results)
     for (var i=0; i<results.length; i++){
-        searchResult.push(results[i].City.trim(), results[i].Latitude, results[i].Longitude);  
+        searchResult.push({
+            City: results[i].City.trim(), 
+            Latitude: results[i].Latitude, 
+            Longitude: results[i].Longitude,
+            Projects: results[i].ProjectName.trim()
+        });  
           
     }
     
@@ -27,7 +32,7 @@ var searchBtn = document.querySelector(".searchBtn");
 
 searchBtn.addEventListener("click", function searchPlace (){
     for (var i=0; i<searchResult[0].length; i++){
-        if (searchBox === searchResult[i].trim()){
+        if (searchBox === searchResult[i]){
             console.log(searchResult[i])
         }
     }
