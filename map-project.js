@@ -1,6 +1,6 @@
 var searchBox = document.querySelector(".searchBox").value;
 
-
+var searchResult = [];
 
 $(document).ready(function(){
     
