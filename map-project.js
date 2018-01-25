@@ -16,7 +16,10 @@ success: function(results){
             City: results[i].City.trim(), 
             Latitude: results[i].Latitude, 
             Longitude: results[i].Longitude,
-            Projects: results[i].ProjectName.trim()
+            Projects: results[i].ProjectName.trim(),
+            Address: results[i].Address.trim(),
+            Country: results[i].CountryName.trim(),
+            ProjectType: results[i].WfSType.trim()
         });  
           
     }
@@ -35,17 +38,27 @@ var searchLat;
 var searchLon;
 var marker;
 
+var cityText = document.querySelector('.cityText').innerHTML;
+var cityTemp = Handlebars.compile(cityText);
+
 searchBtn.addEventListener("click", function searchPlace (){
     for(var i=0; i<searchResult.length; i++){
         if(searchBox.value === searchResult[i].City){
             //   console.log(searchLat + searchLon);
+            document.querySelector('.cityCard').innerHTML = cityTemp({
+                city : searchResult[i].City,
+                project : searchResult[i].Projects,
+                projectType: searchResult[i].ProjectType,
+                address : searchResult[i].Address,
+                country : searchResult[i].Country
+            });
             searchLat = searchResult[i].Latitude;
             searchLon = searchResult[i].Longitude;
             searchLoc = new google.maps.LatLng(searchLat, searchLon);
             marker = new google.maps.Marker({
                 position : searchLoc,
                 map : map 
-            })
+            });
             marker.setPosition(searchLoc);
         }
     }

@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="materialize/css/materialize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<h1>My First Google Map</h1>
+<div class="container">
+        <h1>My First Google Map</h1>
 
-<input type="text" class="searchBox" placeholder="Search"><br>
-<button class="btn waves-effect waves-light" type="submit" name="action" id="searchButton">Search</button>
+        <input type="text" class="searchBox" placeholder="Search"><br>
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="searchButton">Search</button>
+        <br>
+        <div id="googleMap" style="width:100%;height:400px;"></div>
 
-<br>
-<div id="googleMap" style="width:100%;height:400px;"></div>
 
-
+        
+        <div class="cityCard"> 
+            <script type="text/handlebars-x" class="cityText">
+                <div class="row">
+                        <div class="col s12 m6">
+                          <div class="card blue-grey darken-1">
+                            <div class="card-content white-text">
+                              <span>
+                                  <!-- city goes here -->
+                                  <h3 class="card-title">Projects in {{city}}</h3>
+                                </span>
+                                <h6>{{address}}, {{country}}</h6>
+                                {{#if project}}
+                                <!-- project goes here  -->
+                                <ul>
+                                        <li>{{project}}</li>
+                                        <ul>
+                                            <li>{{projectType}}</li>
+                                        </ul>
+                                    </ul>
+                                {{else}}
+                                There are currently no projects for this city
+                            </div>
+                                {{/if}}
+                          </div>
+                        </div>
+                      </div>
+        </script>     
+</div> 
+        
+        
+        
+        
+        
+        
+        
+</div>
+<script type="text/javascript" src="handlebars/handlebars-v4.0.10.js"></script>
 <script src="map-project.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQJ_sXBz0eIPT4l3pN7QsC_XYKG42JMcU"></script>
 
