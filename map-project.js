@@ -1,4 +1,3 @@
-
 var searchResult = [];
 
 $(document).ready(function(){
@@ -6,26 +5,26 @@ $(document).ready(function(){
     //search from searchbox needs run through before the ajax call is made
 
         $.ajax({
-type: "GET",
-url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
-dataType: "json",
-success: function(results){
-    console.log(results)
-    for (var i=0; i<results.length; i++){
-        searchResult.push({
-            City: results[i].City.trim(), 
-            Latitude: results[i].Latitude, 
-            Longitude: results[i].Longitude,
-            Projects: results[i].ProjectName.trim(),
-            Address: results[i].Address.trim(),
-            Country: results[i].CountryName.trim(),
-            ProjectType: results[i].WfSType.trim()
-        });  
-          
-    }
-    
-}    
-}); //end of ajax call for data from education and training api
+            type: "GET",
+            url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
+            dataType: "json",
+            success: function(results){
+                console.log(results)
+                for (var i=0; i<results.length; i++){
+                    searchResult.push({
+                        City: results[i].City.trim(), 
+                        Latitude: results[i].Latitude, 
+                        Longitude: results[i].Longitude,
+                        Projects: results[i].ProjectName.trim(),
+                        Address: results[i].Address,
+                        Country: results[i].CountryName.trim(),
+                        ProjectType: results[i].WfSType
+                    });  
+                    
+                }
+                
+            }    
+        }); //end of ajax call for data from education and training api
 
 console.log(searchResult);
 
@@ -65,10 +64,9 @@ searchBtn.addEventListener("click", function searchPlace (){
     
     console.log(searchLoc)
     
-    // function changeMarkerPosition(marker){
-    //     var latlng = searchLoc;
-    //     marker.setPosition(latlng);
-    // }
+
+
+
     map.setCenter(searchLoc);
     map.setZoom(14);
     
@@ -81,6 +79,4 @@ searchBtn.addEventListener("click", function searchPlace (){
     
     }
     myMap();
-        });
-
-        
+});

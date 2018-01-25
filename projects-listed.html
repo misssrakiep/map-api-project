@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+                        <nav>
+                            <div class="nav-wrapper">
+                                <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+                                <ul class="right hide-on-med-and-down">
+                                    <li><a href="google-maps-api.html"><i class="material-icons">Search</i></a></li>
+                                    <li><a href="projects-listed.html"><i class="material-icons">View_Projects</i></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+  <div class="container">
+
+
+<div class="projectCard">
+    <script type="text/handlebars-x" class="projectText">
+        <div class="row">
+                <div class="col s12 m6">
+                        {{#each searchResult}}
+                    <div class="card blue darken-1">
+                        <div class="card-content white-text">
+                            <span>
+                                   //city goes here
+                                  <h3 class="card-title">{{this.city}}</h3>
+                                </span>
+                                <h6>{{this.address}}, {{this.country}}</h6>
+                                <!-- project goes here  -->
+                                <ul>
+                                        <li>{{project}}</li>
+                                        <ul>
+                                            <li>{{projectType}}</li>
+                                        </ul>
+                                    </ul>
+                            </div>
+                            </div>
+                            {{/each}}
+                        </div>
+        </script>
+    </div>
+
+
+</div>
+  <!--End of container -->
+  <script type="text/javascript" src="handlebars-v4.0.11.js"></script>
+  <script src="project-list.js"></script>
+</body>
+</html>
