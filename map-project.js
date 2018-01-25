@@ -56,7 +56,8 @@ searchBtn.addEventListener("click", function searchPlace (){
     //     var latlng = searchLoc;
     //     marker.setPosition(latlng);
     // }
-    map.setCenter(searchLoc)
+    map.setCenter(searchLoc);
+    map.setZoom(14);
     
 })
     var mapProp= {
