@@ -23,20 +23,18 @@
 <div class="projectCard">
     <script type="text/handlebars-x" class="projectText">
         <div class="row">
+            {{#each results}}
                 <div class="col s12 m6">
-                        {{#each searchResult}}
                     <div class="card blue darken-1">
                         <div class="card-content white-text">
                             <span>
-                                   //city goes here
-                                  <h3 class="card-title">{{this.city}}</h3>
+                                  <h3 class="card-title">{{this.City}}</h3>
                                 </span>
-                                <h6>{{this.address}}, {{this.country}}</h6>
-                                <!-- project goes here  -->
+                                <h6>{{this.address}}, {{this.Country}}</h6>
                                 <ul>
-                                        <li>{{project}}</li>
+                                        <li>{{this.Projects}}</li>
                                         <ul>
-                                            <li>{{projectType}}</li>
+                                            <li>{{this.ProjectType}}</li>
                                         </ul>
                                     </ul>
                             </div>
