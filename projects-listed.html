@@ -17,35 +17,33 @@
                                 </ul>
                             </div>
                         </nav>
-  <div class="container">
 
 
 <div class="projectCard">
     <script type="text/handlebars-x" class="projectText">
-        {{#each results}}
         <div class="row">
+                {{#each results}}
                 <div class="col s12 m6">
                     <div class="card #ff5252 red accent-2">
                         <div class="card-content white-text">
                             <span>
                                   <h3 class="card-title">{{this.City}}</h3>
                                 </span>
-                                <h6>{{this.address}}, {{this.Country}}</h6>
+                                <h6>{{this.Address}}, {{this.CountryName}}</h6>
                                 <ul>
-                                        <li>{{this.Projects}}</li>
+                                        <li>{{this.ProjectName}}</li>
                                         <ul>
-                                            <li>{{this.ProjectType}}</li>
+                                            <li>{{this.WfSType}}</li>
                                         </ul>
                                     </ul>
                             </div>
                             </div>
                         </div>
+    
+    
                         {{/each}}
-        </script>
     </div>
-
-
-</div>
+    </script>
   <!--End of container -->
   <script type="text/javascript" src="handlebars-v4.0.11.js"></script>
   <script src="project-list.js"></script>
