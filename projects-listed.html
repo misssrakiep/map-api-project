@@ -2,21 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-                        <nav>
-                            <div class="nav-wrapper">
-                                <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
-                                <ul class="right hide-on-med-and-down">
-                                    <li><a href="google-maps-api.html"><i class="material-icons">Search</i></a></li>
-                                    <li><a href="projects-listed.html"><i class="material-icons">View_Projects</i></a></li>
-                                </ul>
-                            </div>
-                        </nav>
+        <nav role="navigation">
+        <div class="nav-wrapper #ffa000 amber darken-2">
+          <a href="google-maps-api.html" class="brand-logo"><img src="ourLogo.png" alt="The Project Finder" width="25%"></a>
+          <ul class="right hide-on-med-and-down">
+              <li><a href="google-maps-api.html"><i class="material-icons">search</i>Search</a></li>
+              <li class="active"><a href="projects-listed.html"><i class="material-icons">assignment</i> </a></li>
+            </ul>
+            <ul  id="nav-mobile" class="side-nav">
+                <li><a href="google-maps-api.html"><i class="material-icons">search</i>Search</a></li>
+                <li class="active"><a href="projects-listed.html"><i class="material-icons">assignment</i>Project List</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            </div>
+        </nav>
 
 
 <div class="projectCard">
@@ -49,8 +57,30 @@
                         {{/if}}
     </div>
     </script>
+    </div>
+
+    <script src="materialize/js/materialize.min.js"></script>
+        <footer class="page-footer #ffa000 amber darken-2" style="bottom: 0">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Copyright innogy Digital Academy
+                    
+                </div>
+                    <a class="" href="https://github.com/misssrakiep/" > <img src="img/24386855.jpeg" width="40" height="40">@missrakiep</a>
+                    <a class="" href="https://github.com/vaztonyo/" > <img src="img/23166192.png" width="40" height="40">@Vaztonyo</a>
+                    </div>
+        
+        </footer>
   <!--End of container -->
   <script type="text/javascript" src="handlebars-v4.0.11.js"></script>
   <script src="project-list.js"></script>
+
+  <script type="text/javascript">
+    (function($){
+        $(function(){
+            $('.button-collapse').sideNav();
+        });
+    })(jQuery);
+        </script>
 </body>
 </html>
