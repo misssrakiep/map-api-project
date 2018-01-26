@@ -8,6 +8,9 @@
   margin-bottom: 1em;
 }
 
+.innogyLogo {
+border: 1px solid black;
+}
 
 .materialize-red {
   background-color: #e51c23 !important;
@@ -2553,14 +2556,14 @@ th {
           box-sizing: inherit;
 }
 
-ul:not(.browser-default) {
+/* ul:not(.browser-default) {
   padding-left: 0;
   list-style-type: none;
 }
 
 ul:not(.browser-default) > li {
   list-style-type: none;
-}
+} */
 
 a {
   color: #039be5;

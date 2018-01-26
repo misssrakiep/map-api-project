@@ -22,26 +22,31 @@
 <div class="projectCard">
     <script type="text/handlebars-x" class="projectText">
         <div class="row">
+            {{#if results}}
                 {{#each results}}
                 <div class="col s12 m6">
-                    <div class="card #ff5252 red accent-2">
-                        <div class="card-content white-text">
+                    <div class="card #ffc107 amber">
+                        <div class="card-content black-text">
                             <span>
                                   <h3 class="card-title">{{this.City}}</h3>
                                 </span>
                                 <h6>{{this.Address}}, {{this.CountryName}}</h6>
                                 <ul>
-                                        <li>{{this.ProjectName}}</li>
-                                        <ul>
-                                            <li>{{this.WfSType}}</li>
-                                        </ul>
+                                    {{#if this.WfSType}}
+                                    <b><li>{{this.ProjectName}}</li></b>
+                                       <ul><li>{{this.WfSType}}</li></ul
                                     </ul>
+                                    {{else}}
+                                    <b><li>{{this.ProjectName}}</li></b>
+                                    {{/if}}
+                                </ul>
                             </div>
                             </div>
                         </div>
     
     
                         {{/each}}
+                        {{/if}}
     </div>
     </script>
   <!--End of container -->
