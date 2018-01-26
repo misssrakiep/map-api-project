@@ -22,10 +22,10 @@
 
 <div class="projectCard">
     <script type="text/handlebars-x" class="projectText">
+        {{#each results}}
         <div class="row">
-            {{#each results}}
                 <div class="col s12 m6">
-                    <div class="card blue darken-1">
+                    <div class="card #ff5252 red accent-2">
                         <div class="card-content white-text">
                             <span>
                                   <h3 class="card-title">{{this.City}}</h3>
@@ -39,8 +39,8 @@
                                     </ul>
                             </div>
                             </div>
-                            {{/each}}
                         </div>
+                        {{/each}}
         </script>
     </div>
 
