@@ -42,7 +42,7 @@ var cityTemp = Handlebars.compile(cityText);
 
 searchBtn.addEventListener("click", function searchPlace (){
     for(var i=0; i<searchResult.length; i++){
-        if(searchBox.value === searchResult[i].City){
+        if(searchBox.value === searchResult[i].City || searchBox.value === searchResult[i].Country){
             //   console.log(searchLat + searchLon);
             document.querySelector('.cityCard').innerHTML = cityTemp({
                 city : searchResult[i].City,
@@ -59,6 +59,9 @@ searchBtn.addEventListener("click", function searchPlace (){
                 map : map 
             });
             marker.setPosition(searchLoc);
+        }
+        else {
+            document.querySelector('.cityCard').innerHTML = cityTemp({message: "This city doesn't seem to be in the database, please try another"}); 
         }
     }
     
