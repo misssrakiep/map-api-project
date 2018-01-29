@@ -27,11 +27,9 @@ $(document).ready(function(){
             }    
         }); //end of ajax call for data from education and training api
 
-console.log(searchResult);
 
+        var searchBox = document.querySelector(".searchBox");
 function myMap() {
-var searchBtn = document.querySelector("#searchButton");
-var searchBox = document.querySelector(".searchBox");
 
 var searchLoc;
 var searchLat;
@@ -41,10 +39,9 @@ var marker;
 var cityText = document.querySelector('.cityText').innerHTML;
 var cityTemp = Handlebars.compile(cityText);
 
-searchBtn.addEventListener("click", function searchPlace (){
+searchBox.addEventListener("keyup", function searchPlace (){
     for(var i=0; i<searchResult.length; i++){
         if(searchBox.value === searchResult[i].City || searchBox.value === searchResult[i].Address){
-              console.log(searchResult[i].City);
             document.querySelector('.cityCard').innerHTML = cityTemp({
                 city : searchResult[i].City,
                 project : searchResult[i].Projects,
@@ -66,9 +63,6 @@ searchBtn.addEventListener("click", function searchPlace (){
     map.setCenter(searchLoc);
     map.setZoom(14);
 })
-    
-    console.log(searchLoc)
-
 
 
    
