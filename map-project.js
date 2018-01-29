@@ -1,3 +1,4 @@
+
 var searchResult = [];
 
 $(document).ready(function(){
@@ -16,7 +17,7 @@ $(document).ready(function(){
                         Latitude: results[i].Latitude, 
                         Longitude: results[i].Longitude,
                         Projects: results[i].ProjectName.trim(),
-                        Address: results[i].Address,
+                        Address: results[i].Address.trim(),
                         Country: results[i].CountryName.trim(),
                         ProjectType: results[i].WfSType
                     });  
@@ -42,8 +43,8 @@ var cityTemp = Handlebars.compile(cityText);
 
 searchBtn.addEventListener("click", function searchPlace (){
     for(var i=0; i<searchResult.length; i++){
-        if(searchBox.value === searchResult[i].City || searchBox.value === searchResult[i].Country){
-            //   console.log(searchLat + searchLon);
+        if(searchBox.value === searchResult[i].City || searchBox.value === searchResult[i].Address){
+              console.log(searchResult[i].City);
             document.querySelector('.cityCard').innerHTML = cityTemp({
                 city : searchResult[i].City,
                 project : searchResult[i].Projects,
@@ -60,20 +61,17 @@ searchBtn.addEventListener("click", function searchPlace (){
             });
             marker.setPosition(searchLoc);
         }
-        else {
-            document.querySelector('.cityCard').innerHTML = cityTemp({message: "This city doesn't seem to be in the database, please try another"}); 
-        }
+
     }
-    
-    console.log(searchLoc)
-    
-
-
-
     map.setCenter(searchLoc);
     map.setZoom(14);
-    
 })
+    
+    console.log(searchLoc)
+
+
+
+   
     var mapProp= {
         center: new google.maps.LatLng(39.50, -98.35),
         zoom:5
