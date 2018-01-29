@@ -10,15 +10,15 @@
 </head>
 <body>
         <nav role="navigation">
-                <div class="nav-wrapper #ffa000 amber darken-2">
-                  <a href="google-maps-api.html" class="brand-logo"><h3 style="font-family: 'Sedgwick Ave', cursive;">The Project Finder</h3></a>
+                <div class="nav-wrapper #00695c teal darken-3">
+                  <a href="google-maps-api.html" class="brand-logo"><h4 style="font-family: 'Sedgwick Ave', cursive; margin-top: -5px"> City Project Search <img src="https://ae01.alicdn.com/kf/HTB1fmmgdI2vU1JjSZFwq6x2cpXaJ/Luz-Da-Cidade-de-Nuvens-brancas-Super-City-Batman-do-est-dio-da-fotografia-fundo-pano.jpg" alt="CityprojectSearch" style="border-radius: 50%; width: 50px; margin-top: 5px"></h4></a>
                   <ul class="right hide-on-med-and-down" style="list-style: none;">
                       <li class="active"><a href="google-maps-api.html"><i class="material-icons">search</i></a></li>
-                      <li><a href="projects-listed.html"><i class="material-icons">assignment</i>Project List</a></li>
+                      <li><a href="projects-listed.html"><i class="material-icons">assignment</i></a></li>
                     </ul>
                     <ul  id="nav-mobile" class="side-nav">
-                        <li class="active"><a href="google-maps-api.html"><i class="material-icons">search</i>Search</a></li>
-                        <li><a href="projects-listed.html"><i class="material-icons">assignment</i>Project List</a></li>
+                        <li class="active"><a href="google-maps-api.html"><i class="material-icons">search</i></a></li>
+                        <li><a href="projects-listed.html"><i class="material-icons">assignment</i></a></li>
                     </ul>
                     <a href="#" data-activates="nav-mobile" class="button-collapse">
                         <i class="material-icons">menu</i>
@@ -30,11 +30,14 @@
                     <div class="row">
             
                             <div class="col s12 m4 l3"> 
-                                <img src="https://www.inhouserecruitment.co.uk/wp-content/uploads/2017/04/innogy-logo.png" width="100%" class="innogyLogo" alt="">
+                                <center><img src="https://cdn3.iconfinder.com/data/icons/engineering-vector-line-2/128/53-512.png" width="30%" alt="Search">
+                                <img src="https://cdn2.iconfinder.com/data/icons/industrial-process-glyph-black/2048/5820_-_Windmill-512.png" width="30%" alt="Wind Farm">
+                                <img src="https://cdn3.iconfinder.com/data/icons/famous-city-skyline/48/Sed-15-512.png" width="30%" alt="City"></center>
                                     <div class="cityCard"> 
                                             <script type="text/handlebars-x" class="cityText">
                                                 <div class="row">
-                                                    <div class="card #ffc107 amber">
+                                                    
+                                                    <div class="card white">
                                                         <div class="card-content black-text">
                                                             <span>
                                                                 <!-- city goes here -->
@@ -44,9 +47,9 @@
                                                             {{#if project}}
                                                             <!-- project goes here  -->
                                                             <ul>
-                                                                <li>{{project}}</li>
+                                                                <li>{{this.project}}</li>
                                                                 <ul>
-                                                                    <li>{{projectType}}</li>
+                                                                    <li>{{this.projectType}}</li>
                                                                 </ul>
                                                             </ul>
                                                             {{else}}
@@ -61,7 +64,7 @@
                                         </div> </div>
                       
                       
-                            <div class="col s12 m8 l9"> 
+                            <div class="col s12 m8 l9" style="border-left: 2px solid #00695c"> 
                                     <input type="text" class="searchBox" placeholder="Search projects by city"><br>
                                     <br>
                                     <div id="googleMap" style="width:100%;height:400px;"></div></div>
@@ -70,14 +73,14 @@
 
         <script src="map-project.js"></script>
         <script src="materialize/js/materialize.min.js"></script>
-        <footer class="page-footer #ffa000 amber darken-2" style="bottom: 0; position: fixed; width: 100%">
+        <footer class="page-footer #00695c teal darken-3" style="bottom: 0; position: fixed; width: 100%">
             <div class="footer-copyright">
                 <div class="container">
                     © 2018 Copyright innogy Digital Academy
                     
                 </div>
-                    <a class="" href="https://github.com/misssrakiep/" > <img src="img/24386855.jpeg" width="40" height="40">@missrakiep</a>
-                    <a class="" href="https://github.com/vaztonyo/" > <img src="img/23166192.png" width="40" height="40">@Vaztonyo</a>
+                    <a class="" href="https://github.com/misssrakiep/" > <img src="img/24386855.jpeg" width="40" height="40">Shameera Rakiep</a>
+                    <a class="" href="https://github.com/vaztonyo/" > <img src="img/23166192.png" width="40" height="40">Vaztonyo de Wet</a>
                     </div>
         
         </footer>

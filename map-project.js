@@ -39,7 +39,7 @@ var marker;
 var cityText = document.querySelector('.cityText').innerHTML;
 var cityTemp = Handlebars.compile(cityText);
 
-searchBox.addEventListener("keyup", function searchPlace (){
+searchBox.addEventListener("keyup", function searchPlace (results){
     for(var i=0; i<searchResult.length; i++){
         if(searchBox.value === searchResult[i].City || searchBox.value === searchResult[i].Address){
             document.querySelector('.cityCard').innerHTML = cityTemp({
@@ -61,7 +61,7 @@ searchBox.addEventListener("keyup", function searchPlace (){
 
     }
     map.setCenter(searchLoc);
-    map.setZoom(14);
+    map.setZoom(15);
 })
 
 
