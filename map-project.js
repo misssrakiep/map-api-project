@@ -17,7 +17,7 @@ $(document).ready(function(){
                         Latitude: results[i].Latitude, 
                         Longitude: results[i].Longitude,
                         Projects: results[i].ProjectName.trim(),
-                        Address: results[i].Address.trim(),
+                        Address: $.trim(results[i].Address),
                         Country: results[i].CountryName.trim(),
                         ProjectType: results[i].WfSType
                     });  
