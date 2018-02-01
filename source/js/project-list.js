@@ -1,7 +1,10 @@
 var searchResult = [];
+
 $(document).ready(function(){
+
+    $('.button-collapse').sideNav();
     
-    var projectText = document.querySelector('.projectText').innerHTML;
+    var projectText = $('.projectText').html();
     var projectTemp = Handlebars.compile(projectText);
 
     $.ajax({
@@ -10,9 +13,9 @@ $(document).ready(function(){
         dataType: "json",
         success: function(results){
             console.log(results);
-              document.querySelector('.projectCard').innerHTML = projectTemp({
+              $('.projectCard').html(projectTemp({
                 results: results
-                });   
+                }));   
         }
     }); //end of ajax call for data from education and training api
 }); //End of document ready
