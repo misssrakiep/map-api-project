@@ -2,7 +2,7 @@
 var searchResult = [];
 $(document).ready(function(){
     $('.button-collapse').sideNav();
-    Ext.Ajax.cors = true;
+    Ajax.cors = true;
 
     //search from searchbox needs run through before the ajax call is made
 
