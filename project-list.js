@@ -8,6 +8,7 @@ $(document).ready(function(){
     var projectTemp = Handlebars.compile(projectText);
 
     $.ajax({
+        headers: { "Accept": "application/json"},
         type: "GET",
         url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
         dataType: "json",
