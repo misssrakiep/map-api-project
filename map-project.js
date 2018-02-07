@@ -1,12 +1,11 @@
 
 var searchResult = [];
 $(document).ready(function(){
-    $('.button-collapse').sideNav();
-    cors = true;
-    
+    $('.button-collapse').sideNav();    
     //search from searchbox needs run through before the ajax call is made
     
     $.ajax({
+            headers: { "Accept": "application/json"},
             type: "GET",
             url: "https://developer.nrel.gov/api/windexchange/schoolprojects?api_key=BpwET3I8qcPGHgBcgcECMNuYXfDVEz3zwKN00w1f",
             dataType: "json",
